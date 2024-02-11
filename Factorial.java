@@ -1,23 +1,18 @@
-import java.util.*;
-
-class Recurrsion {
-    int fact(int n) {
-        if (n == 0)
-            return 1;
-        else
-            return (n * fact(n - 1));
-    }
-}
+import java.util.Scanner;
 
 public class Factorial {
+    public static int fact(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        return n * fact(n - 1);
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("enter any numeric value");
-        int x = in.nextInt();
-        Recurrsion ob = new Recurrsion();
-        int y;
-        y = ob.fact(x);
-        System.out.println("your factorial is =" + y);
+        System.out.println("enter number whose find factorial : ");
+        int n = in.nextInt();
+        System.out.println(fact(n));
         in.close();
     }
 }
